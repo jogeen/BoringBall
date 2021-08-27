@@ -1,0 +1,47 @@
+<idea-plugin>
+    <id>com.jogeen.pulgin.boringball.id</id>
+    <name>BoringBall</name>
+    <version>1.0</version>
+    <vendor email="362748627@qq.com" url="http://www.y1ourcom1pany.com">jogeen</vendor>
+
+    <description><![CDATA[
+      Enter short descript123123ion for your plugin here.<br>
+      <em>most HTML 123123123tags may be used</em>
+    ]]></description>
+
+    <change-notes><![CDATA[
+      Add 123123 no12312tes here.<br>
+      <em>most HTML ta123123123gs may be used</em>
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <projectService serviceInterface="com.jogeen.plugin.boringball.service.BallService"
+                        serviceImplementation="com.jogeen.plugin.boringball.service.BallService"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="BallAction" class="com.jogeen.plugin.boringball.action.BallAction" text="BallAction"
+                description="BallAction">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="alt B"/>
+        </action>
+    </actions>
+    <application-components>
+        <component>
+            <implementation-class>com.jogeen.plugin.boringball.BoringBallApplicationPlugin</implementation-class>
+        </component>
+    </application-components>
+
+</idea-plugin>
